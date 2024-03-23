@@ -41,3 +41,5 @@ fn handle_connection(mut stream: TcpStream) {
 
     stream.write_all(response.as_bytes()).unwrap();
 }
+
+// add comment for rewriting commit message (5) Multithreaded server using Threadpool

@@ -52,3 +52,5 @@ impl Worker {
         Worker { id, thread }
     }
 }
+
+// add comment for rewriting commit message (5) Multithreaded server using Threadpool
