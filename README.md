@@ -12,3 +12,9 @@ Pada commit kedua ini, kita mengubah isi method handle_connection agar dapat men
 Screenshot:
 ![commit3_screenshot](https://github.com/mariomichael/advprog-modul6/blob/main/images/commit3.png)
 Pada commit ketiga ini, kita menambahkan case halaman HTML jika server merespon bahwa halaman yang direquest tidak tersedia. Hal ini dilakukan dengan menambahkan halaman `bad.html` pada opsi respon yang terdapat di `main.rs`. Halaman `bad.html` akan berisi konten HTML yang menyatakan bahwa halaman yang direquest tidak tersedia. Hal ini dilakukan dengan menambahkan if-else berdasarkan hasil request_line. Jika hasilnya "GET / HTTP/1.1", berarti request berhasil dan akan ditampilkan halaman `hello.html`, namun jika tidak, akan ditampilkan halaman error seperti`bad.html`. Pada kode dilakukan refactoring untuk menghilangkan bagian kode yang ada pengulangan (di bagian if-else) sehingga kode menjadi lebih efisien dan mudah dimengerti.
+
+## [4] Commit 4 reflection notes
+Pada commit keempat ini, kita memodifikasi method `handle_connection` untuk memberikan simulasi delay selama beberapa detik. Hal ini biasa dilakukan jika server sedang menangani request dengan jumlah yang banyak secara single-threaded. Oleh karena itu kita dapat menggunakan ThreadPool untuk menghandle request yang banyak secara bersamaan dengan lebih baik sehingga pengguna tidak perlu merasakan delay seperti yang disimulasikan dalam commit kali ini. Dalam commit ini sendiri, jika URL nya ditulis seperti biasa tanpa menambahkan apa-apa, halaman akan terbuka secara langsung dengan cepat. Namun jika kita menambahkan `/sleep` pada request, maka otomatis akan ada delay yang diberikan sesuai kondisional yang sudah disetting sebelumnya. Dengan menggunakan teknologi ThreadPool, yaitu teknologi agar sebuah web dapat menghandle berbagai thread secara simultan, masalah ini bisa diselesaikan. 
+
+
+*HARUS 6 KALIMAT
